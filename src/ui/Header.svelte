@@ -66,14 +66,10 @@
             width: 100%;
         }
         .pb-menu-icon {
-            color: #f1fb12;
             width: 20%;
             display: flex;
             justify-content: center;
             padding-top: 12px;
-        }
-        .pb-icon {
-            cursor: pointer;
         }
     }
 </style>
