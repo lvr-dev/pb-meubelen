@@ -44,7 +44,7 @@
         <div class="pb-image-container">
             {#each additionalImages as addImg}
                 <div class="pb-modal-image">
-                    <img src={addImg.src} alt={addImg}>
+                    <img src={addImg.src} alt={addImg.alt}>
                 </div>
             {/each}
         </div>
