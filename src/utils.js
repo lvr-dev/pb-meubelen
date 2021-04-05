@@ -9,7 +9,7 @@ export function getTags(items) {
             if (tagList.indexOf(tag) === -1) {
                 tagList = [...tagList, tag];
             }
-        })
+        });
     });
     return tagList;
 }

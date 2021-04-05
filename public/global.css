@@ -149,28 +149,6 @@ h1, h2, h3 {
 	flex-direction: row;
 }
 
-.badge {
-	width: 240px;
-	height: 340px;
-	border-bottom: solid 1px #e41586;
-	background-color: rgb(31, 31, 31);
-	margin: 1rem;
-}
-.badge-image {
-	width: 100%;
-	height: 200px;
-}
-.badge-content {
-	position: relative;
-	overflow: hidden;
-	-webkit-line-clamp: 4;
-	line-clamp: 4;
-	-webkit-box-orient: vertical;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	padding: 0 0.3rem;
-	cursor: pointer;
-}
 .main-image {
 	max-width: 100%;
 	max-height: 100%;
@@ -188,6 +166,12 @@ h2.page-title {
 	font-weight: 500;
 	margin-bottom: 0.2rem;
 }
+
+.pb-icon {
+	cursor: pointer;
+	color: #f1fb12;
+}
+
 @media only screen and (min-width: 601px) {
 	.mobile {
 		display: none;

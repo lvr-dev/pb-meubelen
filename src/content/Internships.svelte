@@ -4,11 +4,16 @@
     <div class="block">
         <h3>The Creative Builders - 2</h3>
         <h5>3e stage periode - 1 februari 2021 / 2 april 2021</h5>
-        <div class="text-wrapper">
+        <div class="image-wrapper">
+            <div>
             <p>Omdat mijn tweede stageperiode bij The Creative Builders heel goed beviel, heb ik hier nogmaals stage gelopen.
                 Er viel nog genoeg te leren. 
             </p>
             <p>Tekst zelf invullen</p>
+            </div>
+            <div>
+                <img src="assets/pippi-benneheij_2.jpeg" alt="Pippi op stage">
+            </div>
         </div>   
     </div>
    <div class="block">
@@ -40,5 +45,10 @@
     }
     .text-wrapper {
         margin-top: 0.5rem;
+    }
+    .image-wrapper {
+        display: flex;
+        flex-direction: row;
+
     }
 </style>

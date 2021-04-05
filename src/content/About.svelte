@@ -3,8 +3,8 @@
     <div class="card">
         <div class="card-image">
             <img 
-            src="assets/pippi-benneheij-1.jpg" 
-            alt="dikkie de eerste"
+            src="assets/pippi-benneheij_1.jpeg" 
+            alt="Pippi aan het werk"
             />
         </div>
         <div class="card-content">
