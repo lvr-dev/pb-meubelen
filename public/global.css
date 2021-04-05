@@ -1,34 +1,50 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-/* Remove default padding */
-ul[class],
-ol[class] {
-  padding: 0;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 /* Set core body defaults */
@@ -84,12 +100,104 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	font-family: Roboto, sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
 }
 
-h1 {
+h1, h2, h3 {
 	font-family: 'Arvo', serif;
- }
+	color: #e41586;
+}
+
+.pb-main {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+	position: absolute;
+	top: 86px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+.pb-content {
+    height: 100%;
+    width: 70%;
+}
+.content-wrapper {
+	padding: 5rem 3rem;
+	border-left: solid 1px #e41586;
+	height: 100%;
+	width: 100%;
+}
+.content-flex-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.card {
+	background-color: rgb(31, 31, 31);
+	padding-bottom: 0.2rem;
+	display: flex;
+	flex-direction: row;
+}
+
+.badge {
+	width: 240px;
+	height: 340px;
+	border-bottom: solid 1px #e41586;
+	background-color: rgb(31, 31, 31);
+	margin: 1rem;
+}
+.badge-image {
+	width: 100%;
+	height: 200px;
+}
+.badge-content {
+	position: relative;
+	overflow: hidden;
+	-webkit-line-clamp: 4;
+	line-clamp: 4;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	padding: 0 0.3rem;
+	cursor: pointer;
+}
+.main-image {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	margin: 0 auto;
+}
+
+h1, h2, h3 {
+	font-family: 'Arvo', serif;
+	color: #e41586;
+}
+
+h2.page-title {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-bottom: 0.2rem;
+}
+@media only screen and (min-width: 601px) {
+	.mobile {
+		display: none;
+	}
+	.pb-content {
+		width: 65%;
+		height: 100%;
+		margin-top: 1rem;
+	}
+	.content-wrapper {
+		padding: 5rem 2rem;
+	}
+}
