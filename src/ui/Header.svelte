@@ -11,7 +11,7 @@
 </script>
 <header class="pb-fw-header">
     <div class="pb-header-toolbar">
-        <div class="pb-title-header">
+        <div class="pb-title-header inset-12">
             <div class="pb-title">Pippi Benneheij</div>
             <div>Houtbewerking</div>
         </div>
@@ -41,19 +41,12 @@
         width: 70%;
         margin: 1rem auto;
     }
-    .pb-title-header {
-        color: #e41586;
-        font-family: 'Arvo', serif;   
-        display: flex;
-        flex-direction: column; 
-        width: 80%;
-        padding: 0 12px;
-    }
-    .pb-title {
-        font-size: 2rem;
-    }
+
     .pb-menu-icon {
        display: none;
+    }
+    .inset-12 {
+        padding: 0 12px; 
     }
 
     @media only screen and (max-width: 824px) {

@@ -19,19 +19,23 @@
 <div class="pb-modal-overlay">
     <div class="pb-modal">
         <div class="pb-modal-header">
-            <h1 class="modal-header">{title}</h1>
-            <div 
-                class="pb-icon"
-                on:click={closeModal}
-            >
-                <Icon scale="2" data={times}/>
+            <div class="pb-title-header">
+                <div class="pb-title">{title}</div>
+            </div>
+            <div class="pb-menu-icon">
+                <div 
+                    class="pb-icon"
+                    on:click={closeModal}
+                >
+                    <Icon scale="2" data={times}/>
+                </div>
             </div>
         </div>
         <div class="pb-modal-content">
-            <div>
+            <div class="pb-modal-text">
                 {text}
             </div>
-            <div>
+            <div class="pb-modal-image-container">
                 <img 
                 src={badgeImage.src} 
                 alt ={badgeImage.alt}
@@ -52,9 +56,7 @@
     </div>
 </div>
 <style>
-   h1.modal-header {
-       font-size: 2rem;
-   }
+
    .pb-modal-overlay {
        position: fixed;
        top: 0;
@@ -79,11 +81,21 @@
        flex-direction: row;
        justify-content: space-between;
        align-items: baseline;
-       margin-bottom: 1rem;
+       margin-bottom: 2rem;
    }
    .pb-modal-content {
        display: flex;
        flex-direction: row;
+   }
+   .pb-modal-text{
+        width: 60%;
+   }
+   .pb-modal-image-container {
+       width: 40%;
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+
    }
    .pb-hr {
         border-bottom: solid 1px #e41586;
@@ -99,10 +111,34 @@
    img.cropped {
        max-height: 240px;
    }
+   .pb-menu-icon {
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 
-   @media only screen and (max-width: 824px) {
+   @media only screen and (max-width: 600px) {
        .pb-modal-content {
-           flex-direction: column;
+           flex-direction: column-reverse;
+           width: 90%;
+           margin: 0 auto;
        }
+
+       .pb-modal-text{
+            width: 90%;
+            margin-bottom: 0.2rem;
+        }
+        .pb-modal-image-container {
+            margin-bottom: 1rem;
+            width: 90%;
+        }
+        .pb-image-container {
+            flex-direction: column;
+        }
+   }
+
+   @media only screen and (min-width: 601px) and (max-width: 825px) {
+
    }
 </style>
