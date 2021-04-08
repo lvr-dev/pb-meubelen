@@ -28,7 +28,6 @@
 <style>
     .pb-fw-header {
         width: 100%;
-        height: 86px;
         margin: 0;
         padding: 0;
         position: absolute
@@ -36,7 +35,6 @@
     .pb-header-toolbar {
         display: flex;
         flex-direction: row;
-        padding-top: 4px;
         border: solid 1px #e41586;
         width: 70%;
         margin: 1rem auto;

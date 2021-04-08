@@ -29,7 +29,12 @@
     min-width: 240px;
 }
 .card-content {
-    padding: 1rem;
+    margin-top: 1rem;
+}
+@media only screen and (min-width: 601px) {
+    .card-content {
+        margin: 1rem;
+    }
 }
 @media only screen and (max-width: 825px) {
     .card {
@@ -37,7 +42,7 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     .card {
         flex-direction: column;
     }

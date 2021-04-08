@@ -133,10 +133,7 @@ h1, h2, h3 {
     width: 100%;
 }
 .content-wrapper {
-	padding: 5rem 1rem;
-	border-left: solid 1px #e41586;
-	height: 100%;
-	width: 100%;
+	padding: 2rem 1rem;
 }
 .content-flex-wrapper {
 	display: flex;
@@ -184,15 +181,20 @@ h2.page-title {
 		display: none;
 	}
 	.pb-content {
-		width: 65vw;
+		width: 70%;
 		height: 100%;
 		margin-top: 1rem;
 	}
 	.content-wrapper {
-		padding: 5rem 2rem;
+		padding: 5rem 0 0 1rem;
 	}
 }
 
+@media only screen and (min-width: 826px) {
+	.content-wrapper {
+		border-left: solid 1px #e41586;
+	}
+}
 @media only screen and (min-width: 601px) and (max-width: 825px) {
 	.pb-content {
 		width: 90vw;
