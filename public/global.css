@@ -109,13 +109,14 @@ html, body {
 }
 
 body {
-	font-family: 'Khula', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
 	font-size: 15px;
 }
 
 h1, h2, h3 {
 	font-family: 'Arvo', serif;
-	color: #e41586;
+	color: #FFC300;
 }
 
 .pb-main {
@@ -151,7 +152,7 @@ h1, h2, h3 {
 
 h1, h2, h3 {
 	font-family: 'Arvo', serif;
-	color: #e41586;
+	color: #FFC300;
 }
 
 h2.page-title {
@@ -161,7 +162,7 @@ h2.page-title {
 }
 
 .pb-title-header {
-	color: #e41586;
+	color: #FFC300;
 	font-family: 'Arvo', serif;   
 	display: flex;
 	flex-direction: column; 
@@ -192,7 +193,7 @@ h2.page-title {
 
 @media only screen and (min-width: 826px) {
 	.content-wrapper {
-		border-left: solid 1px #e41586;
+		border-left: solid 1px #FFC300;
 	}
 }
 @media only screen and (min-width: 601px) and (max-width: 825px) {

@@ -38,7 +38,8 @@
  </div>
 <style>
     h5 {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
     }
     .block {
         margin-bottom: 2rem;

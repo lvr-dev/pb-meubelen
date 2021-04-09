@@ -173,12 +173,12 @@ import { filterBadges, getTags } from "../utils";
         content: '#';
     }
     .badge-active {
-        color: #f1fb12;
+        color: #FF5733 ;
     }
     .badge {
         width: 240px;
         height: 340px;
-        border-bottom: solid 1px #e41586;
+        border-bottom: solid 1px #FF5733 ;
         background-color: rgb(31, 31, 31);
         margin: 1rem auto;
     }

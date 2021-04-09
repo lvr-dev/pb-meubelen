@@ -71,13 +71,13 @@ li.menu-link {
     width: 100%;
     text-decoration: none;
     padding: 1rem;
-    color: #fff;
+    color: #ff7f00;
     cursor: pointer;
 }
 
 li.menu-link.selected {
     font-weight: bold;
-    color: #f1fb12;
+    color: #FFC300;
     cursor: crosshair;
 }
 
@@ -103,7 +103,7 @@ li.menu-link.selected {
         padding: 4rem 2rem;
     }
     .pb-menu-icon {
-        color: #f1fb12;
+        color: #FF5733;
         width: 20%;
         display: flex;
         justify-content: center;

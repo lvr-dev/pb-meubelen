@@ -35,7 +35,7 @@
     .pb-header-toolbar {
         display: flex;
         flex-direction: row;
-        border: solid 1px #e41586;
+        border: solid 1px #FFC300;
         width: 70%;
         margin: 1rem auto;
     }
