@@ -72,7 +72,7 @@
        margin: 4rem auto;
        background-color: rgb(10,10,10);
        opacity: 1;
-       border: solid 1px #e41586;
+       border: solid 1px #ff7f00;
        padding: 1rem;
        overflow: scroll;
    }
@@ -115,7 +115,7 @@
         width: 20%;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: end;
     }
 
    @media only screen and (max-width: 600px) {

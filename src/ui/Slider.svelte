@@ -103,7 +103,7 @@ li.menu-link.selected {
         padding: 4rem 2rem;
     }
     .pb-menu-icon {
-        color: #FF5733;
+        color: #ff7f00;
         width: 20%;
         display: flex;
         justify-content: center;
