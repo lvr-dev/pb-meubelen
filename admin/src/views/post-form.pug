@@ -2,4 +2,12 @@ extends layout
 
 block content 
     h1= title
-    p This is where the form will be
+    
+    form(method='POST' action='')
+        .pips--form-group 
+            label(for='post-title') Title: 
+            input#post-title(type='text')
+        .pips--form-group 
+            label(for='post-content') Your content goes here: 
+            textarea#post-content(rows=4)
+        button.pips--primary-button(type='submit') Save

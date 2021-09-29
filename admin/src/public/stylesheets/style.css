@@ -3,31 +3,34 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-body .users-column {
-  display: inline-block;
-  margin-right: 2em;
+.pips--form-group {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.3rem;
+  border: solid 1px lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.pips--form-group > label {
+  font-weight: bold;
   vertical-align: top;
+  display: inline-block;
+  width: 12rem;
 }
 
-body .users-column .column-header {
-  padding-bottom: 5px;
-  font-weight: 700;
-  font-size: 1.2em;
+.pips--form-group > input, .pips--form-group > textarea,
+.pips--form-group > select, .pips--form-group > checkbox {
+  display: inline-block;
+  min-width: 36rem;
 }
 
-body .add-user-col input {
-  margin-bottom: 10px;
-}
-
-body .users-column .user-display-ele {
-  padding-bottom: 10px;
-}
-
-body .users-column .user-display-ele button {
-  margin-top: 2px;
-  margin-bottom: 10px;
-}
-
-body .users-column .user-display-ele .edit-view {
-  display: none;
+.pips--primary-button {
+  border: none;
+  border-radius: 0.3rem;
+  min-width: 98px;
+  min-height: 36px;
+  background-color: mediumslateblue;
+  color: white;
 }
