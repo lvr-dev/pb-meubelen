@@ -1,5 +1,7 @@
 import { Router } from 'express';
-import * as postsController from '@controllers/posts';
+import { index as postsIndex} from '@controllers/posts';
 const postsRouter = Router();
 
-postsRouter.get('/', )
+postsRouter.get('/', postsIndex);
+
+export default postsRouter;
