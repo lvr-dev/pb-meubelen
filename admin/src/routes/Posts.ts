@@ -6,4 +6,6 @@ postsRouter.get('/', postsIndex);
 
 postsRouter.post('/', createPost)
 
+
+
 export default postsRouter;
