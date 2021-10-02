@@ -1,0 +1,27 @@
+extends index 
+
+block content
+    sidebar.pips--sidebar 
+        div.pips--sidebar-header
+            h4.pips--h4 Alle posts
+        ul
+            if posts
+                each post in posts 
+                    a(href=`/posts/${post.slug}` alt=`${post.postTitle}`) 
+                        li.pips--listitem= post.postTitle
+
+
+    main.pips--main
+        div.pips--main-toolbar
+            h1.pips--h1= title
+            if selectedPost 
+                button.pips--primary-button
+                    a(href='/posts') Nieuwe post
+
+        if selectedPost
+            include includes/post-detail.pug
+        else
+            include includes/post-form.pug
+        
+
+

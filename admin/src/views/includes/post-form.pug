@@ -1,0 +1,12 @@
+div.pips--card
+    h2 Create a new post
+    form(method='POST' action='')
+        .pips--form-group 
+            label(for='post-title') Title: 
+            input#post-title(type='text', name='postTitle' value='')
+        .pips--form-group 
+            label(for='post-content') Your content goes here: 
+            textarea#post-content(rows=4, name='postContent', value='')
+            script.  
+                var easyMDE =  new EasyMDE();
+        button.pips--primary-button(type='submit') Save

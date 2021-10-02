@@ -9,7 +9,6 @@ BaseRouter.use('/posts', postsRouter);
 
 /* GET home page. */
 BaseRouter.get('/', function (req: Request, res: Response) {
-  console.log('the baserouter');
   res.redirect('/posts');
 });
 

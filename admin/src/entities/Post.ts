@@ -1,10 +1,11 @@
 
-export interface IPost {
+export interface IPostInitial {
   postTitle: string;
   postContent: string;
 }
 
-export interface IPostSaved extends IPost{
+export interface IPost extends IPostInitial {
   dateCreated: Date;
   dateChanged: Date;
+  slug: string;
 }

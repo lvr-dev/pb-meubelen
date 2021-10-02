@@ -21,6 +21,7 @@
     "exec": "./node_modules/.bin/ts-node -r tsconfig-paths/register ./src"
   },
   "_moduleAliases": {
+    "@builders": "dist/builders",
     "@controllers": "dist/controllers",
     "@daos": "dist/daos",
     "@entities": "dist/entities",
@@ -65,6 +66,7 @@
     "command-line-args": "^5.2.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
+    "easymde": "^2.15.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "helmet": "^4.6.0",
@@ -84,6 +86,7 @@
     "@types/jsonfile": "^6.0.1",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.10.1",
+    "@types/showdown": "^1.9.4",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
@@ -93,6 +96,7 @@
     "jasmine": "^3.9.0",
     "nodemon": "^2.0.13",
     "pug": "^3.0.2",
+    "showdown": "^1.9.1",
     "supertest": "^6.1.6",
     "ts-node": "^10.2.1",
     "tsconfig-paths": "^3.11.0",

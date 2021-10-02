@@ -1,6 +1,57 @@
 body {
-  padding: 100px;
+  padding: 0;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #467080;
+}
+
+.pips--container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  margin: 2rem;
+}
+
+
+.pips--sidebar-header {
+  padding: 1rem;
+}
+
+.pips--h1 {
+  color: #35a6d3;
+}
+
+.pips--h4 {
+  color: #467080;
+}
+
+.pips--sidebar {
+  width: 22vw;
+  margin: 1rem;
+  border: solid 1px lightgray;
+  border-radius: 0.5rem;
+  min-height: 76vh;
+}
+
+.pips--main {
+  width: 68vw;
+  min-height: 1px;
+  margin: 1rem;
+}
+
+.pips--main-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pips--listitem {
+  margin: 0.5rem 0;
+}
+.pips--listitem::marker {
+  color: #35a6d3;
 }
 
 .pips--form-group {
@@ -31,6 +82,11 @@ body {
   border-radius: 0.3rem;
   min-width: 98px;
   min-height: 36px;
-  background-color: mediumslateblue;
+  background-color: #467080;
+  color: white;
+  cursor: pointer;
+}
+
+.pips--primary-button > a {
   color: white;
 }

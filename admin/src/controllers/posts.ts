@@ -1,20 +1,23 @@
 import { Request, Response } from 'express';
-import { IPost } from '@entities/Post';
-import { writeNewPost } from '@daos/postDao';
+import { IPostInitial } from '@entities/Post';
+import { writeNewPost, getCachedPosts, getPostByTitle } from '@daos/postDao';
 
-export function index(req: Request, res: Response): void {
-  res.render('post-form', { title: 'Create your content here' });
+export async function posts(req: Request, res: Response): Promise<void> {
+  const allPosts = await getCachedPosts();
+  res.render('posts', { title: 'Pippi\'s Posts', posts: allPosts});
 }
 
 export async function createPost(req: Request, res: Response) {
- 
-  const postObject = req.body as IPost;
-  const createdPostObject = await writeNewPost(postObject);
-
-  res.render('post-detail', { postTitle: createdPostObject.postTitle, postContent: createdPostObject.postContent});
-
+  const postObject = req.body as IPostInitial;
+  await writeNewPost(postObject);
+  const allPosts = await getCachedPosts();
+  res.render('posts', { title: 'Pippi\'s Posts', posts: allPosts });
 }
 
-export async function getPosts(req: Request, res: Response) {
-  
+export async function updatePost(req: Request, res: Response) {
+  const post = await getPostByTitle(req.params.slug);
+  console.log('the post', post);
+  const allPosts = await getCachedPosts();
+  res.render('posts', { "title": "Pippi\'s Posts", posts: allPosts, selectedPost: post });
 }
+

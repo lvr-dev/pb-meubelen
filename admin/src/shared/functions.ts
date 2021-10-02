@@ -1,4 +1,5 @@
 import logger from './Logger';
+import { resolve } from 'path';
 
 export const pErr = (err: Error) => {
     if (err) {
@@ -11,5 +12,15 @@ export const getRandomInt = () => {
 };
 
 export const getSlug = (title: string) => {
-   return title.replace(/\s+/g, '-').toLowerCase();
+    title = title.replace(/[&\/\\#*?]/g, '');
+    return title.replace(/\s+/g, '-').toLowerCase();
+}
+
+export const createPostFileName = (
+    contentUrl: string,
+    slug: string,
+    ext: string = '.json'
+): string => {
+    const fileName = `${slug}${ext}`;
+    return resolve(contentUrl, fileName);
 }
