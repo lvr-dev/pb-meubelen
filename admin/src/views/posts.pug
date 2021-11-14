@@ -1,4 +1,4 @@
-extends index 
+extends index.pug 
 
 block content
     sidebar.pips--sidebar 
@@ -13,15 +13,25 @@ block content
 
     main.pips--main
         div.pips--main-toolbar
-            h1.pips--h1= title
             if selectedPost 
-                button.pips--primary-button
-                    a(href='/posts') Nieuwe post
+                div.pips--actions
+                    if !edit
+                        button.pips--button.pips--secondary-button 
+                            a(href=`/posts/${selectedPost.slug}/edit`) Post Aanpassen
+                    button.pips--button.pips--primary-button
+                        a(href='/posts') Nieuwe post
 
-        if selectedPost
+
+        if selectedPost && edit
+            include includes/post-form.pug
+        else if (selectedPost) 
             include includes/post-detail.pug
         else
             include includes/post-form.pug
-        
+
+
+
+
+
 
 

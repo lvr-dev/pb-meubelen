@@ -1,7 +1,7 @@
 <script>
 import { onMount } from "svelte";
 import ProjectModal from "../ui/ProjectModal.svelte";
-import { toggleModalValue } from "../store";
+import { toggleModalValue } from "../stores/ui-store";
 import { filterBadges, getTags } from "../utils";
 
     let selectedBadge = 'all';

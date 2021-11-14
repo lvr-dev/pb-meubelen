@@ -1,7 +1,7 @@
 <script>
      import Icon from 'svelte-awesome';
      import { times } from 'svelte-awesome/icons';
-     import { toggleModalValue } from '../store';
+     import { toggleModalValue } from '../stores/ui-store';
     
      export let id;
      export let tags;

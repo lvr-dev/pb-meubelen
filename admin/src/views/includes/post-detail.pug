@@ -2,5 +2,7 @@ div.pips--card
     #selectedPost
 
         h2 #{selectedPost.postTitle}
-        p !{selectedPost.postContent}
+        if selectedPost.from
+            span van #{selectedPost.from} tot #{selectedPost.to}
+        p !{selectedPost.htmlContent}
 
