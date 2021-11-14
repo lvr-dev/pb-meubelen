@@ -1,7 +1,7 @@
 <script>
      import Icon from 'svelte-awesome';
      import { bars } from 'svelte-awesome/icons';
-     import { showMenu } from '../store.js';
+     import { showMenu } from '../stores/ui-store.js';
 
      function toggleSideMenu() {
         showMenu.set(true);

@@ -1,12 +1,59 @@
 div.pips--card
-    h2 Create a new post
-    form(method='POST' action='')
+    if selectedPost
+        h2 #{selectedPost.postTitle}
+    else 
+        h2 Nieuw item toevoegen
+    form(method='POST'
+         action=(selectedPost ? `/posts/${selectedPost.slug}` : `/posts`)
+    )
         .pips--form-group 
-            label(for='post-title') Title: 
-            input#post-title(type='text', name='postTitle' value='')
+            label(for='post-title') Titel: 
+            input#post-title(type='text', name='postTitle' value=(undefined===selectedPost ? '' : selectedPost.postTitle))
+
         .pips--form-group 
-            label(for='post-content') Your content goes here: 
-            textarea#post-content(rows=4, name='postContent', value='')
-            script.  
-                var easyMDE =  new EasyMDE();
-        button.pips--primary-button(type='submit') Save
+            label(for='post-content') Tekst: 
+            if selectedPost
+                textarea#htmltContent(rows=4, name='htmlContent', value=(undefined===selectedPost ? '' : selectedPost.htmlContent)).
+                    #{selectedPost.htmlContent}
+            else 
+                textarea#htmltContent(rows=4, name='htmlContent', value=(undefined===selectedPost ? '' : selectedPost.htmlContent))
+
+        .pips--form-group 
+            p= postType
+            label(for='post-type') Type content: 
+            select(type='select', placeholder='Content type', name='contentType')
+                each postType, index in postTypes
+                    option(value=postType[0] selected=(undefined===selectedPost ? '' : selectedPost.postType)) #{postType[1]}
+        
+        .pips-form-group
+            label(for='from') Begindatum (indien relevant): 
+            input(
+                type='date', 
+                name='from', 
+                value=(undefined===selectedPost ? '' : selectedPost.from)
+                min='2019-01-01'
+                max='2030-01-01'
+            )
+
+        .pips-form-group
+            label(for='to') Einddatum: 
+            input(
+                type='date', 
+                name='to', 
+                value=(undefined===selectedPost ? '' : selectedPost.to)
+                min='2019-01-01'
+                max='2030-01-01'
+            )
+
+
+        .pips--form-group.hidden 
+            input#post-title(type='text', name='id' value=(undefined===selectedPost ? '' : selectedPost.id))
+
+        button.pips--button.pips--primary-button(type='submit') Opslaan
+
+    script. 
+        CKEDITOR.replace('htmlContent', {
+            customConfig: ''
+        })
+
+

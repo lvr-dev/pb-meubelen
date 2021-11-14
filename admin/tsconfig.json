@@ -91,6 +91,6 @@
     "spec/**/*.ts"
   ],
   "exclude": [
-    "src/public/"
+    "src/public"
   ]
 }

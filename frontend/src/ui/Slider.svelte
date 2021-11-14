@@ -2,7 +2,7 @@
     import { createEventDispatcher } from 'svelte';
     import Icon from 'svelte-awesome';
     import { times } from 'svelte-awesome/icons';
-    import { showMenu } from '../store.js';
+    import { showMenu } from '../stores/ui-store.js';
 
     const dispatch = createEventDispatcher();
     let selectedMenuOption = 'aboutme';
