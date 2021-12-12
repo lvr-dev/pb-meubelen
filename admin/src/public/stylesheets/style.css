@@ -107,3 +107,7 @@ body {
   color: white;
 }
 
+.date-label {
+  min-width: 240px;
+  display: inline-block;
+}

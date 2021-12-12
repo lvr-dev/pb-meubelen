@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { IPostInitial, IPost } from '@entities/Post';
-import { createNewPostFile, getCachedPosts, getPostByTitle, updatePostFile } from '@daos/postDao';
-import { PostType } from '@entities/Post';
+import { IPostInitial, IPost } from 'src/posts/Post';
+import { writeNewPost, getCachedPosts, getPostByTitle, writeExistingPost } from 'src/posts/postsDao';
+import { PostType } from 'src/posts/Post';
 
 export async function posts(req: Request, res: Response): Promise<void> {
   const allPosts = await getCachedPosts();
@@ -17,7 +17,7 @@ export async function getPost(req: Request, res: Response) {
 
 export async function createPost(req: Request, res: Response) {
   const postObject = req.body as IPostInitial;
-  await createNewPostFile(postObject);
+  await writeNewPost(postObject);
   
   const allPosts = await getCachedPosts();
   const postTypeArray = Object.entries(PostType);
@@ -27,7 +27,7 @@ export async function createPost(req: Request, res: Response) {
 
 export async function updatePost(req: Request, res: Response) {
   const postObject = req.body as IPost;
-  await updatePostFile(postObject);
+  await writeExistingPost(postObject);
   const allPosts = await getCachedPosts();
   res.redirect('/posts');
 }

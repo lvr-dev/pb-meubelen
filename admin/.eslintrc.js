@@ -3,7 +3,6 @@ module.exports = {
     "extends": "eslint:recommended",
     "rules": {
         // enable additional rules
-        "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
@@ -14,7 +13,7 @@ module.exports = {
 
         // disable rules from base configurations
         // eslint-disable-next-line indent
-         "for-direction": "off",
+            "for-direction": "off",
     },
     "env": {
         "browser": true,

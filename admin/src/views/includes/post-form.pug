@@ -26,7 +26,7 @@ div.pips--card
                     option(value=postType[0] selected=(undefined===selectedPost ? '' : selectedPost.postType)) #{postType[1]}
         
         .pips-form-group
-            label(for='from') Begindatum (indien relevant): 
+            label(for='from' class='date-label') Begindatum (indien relevant): 
             input(
                 type='date', 
                 name='from', 
@@ -36,7 +36,7 @@ div.pips--card
             )
 
         .pips-form-group
-            label(for='to') Einddatum: 
+            label(for='to' class='date-label') Einddatum: 
             input(
                 type='date', 
                 name='to', 
