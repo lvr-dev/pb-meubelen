@@ -1,10 +1,10 @@
-import { v4 as uuidv4 } from 'uuid';
-import { IPost, IPostInitial } from '@entities/Post';
+import { v1 as uuidv1 } from 'uuid';
+import { IPost, IPostInitial } from 'src/posts/Post';
 
 
 export const buildPost = (post: IPostInitial): IPost => {
   const slug = getSlug(post.postTitle);
-  const id = uuidv4();
+  const id = uuidv1();
   const postDates = {
     id,
     dateCreated: new Date(),
@@ -14,7 +14,7 @@ export const buildPost = (post: IPostInitial): IPost => {
   return { ...post, ...postDates };
 }
 
-export const updatePost = (post: IPost, existingPost: Partial<IPost>): IPost => {
+export const buildUpdatePost = (post: IPost, existingPost: Partial<IPost>): IPost => {
   const slug = getSlug(post.postTitle);
   const updatedValues = {
     ...{

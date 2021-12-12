@@ -1,12 +1,12 @@
 export enum PostType {
-  Project = "werkstuk",
-  Internship = "stage",
-  About = "over Pippi",
+  project = "werkstuk",
+  internship = "stage",
+  about = "over Pippi",
 }
 
 export interface IPostInitial {
   postTitle: string;
-  postType: Enumerator<PostType>;
+  postType: PostType;
   htmlContent: string;
 }
 

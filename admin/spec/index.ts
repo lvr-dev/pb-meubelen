@@ -21,12 +21,12 @@ const jasmine = new Jasmine({});
 
 // Set location of test files
 jasmine.loadConfig({
-    random: true,
+    random: false,
     spec_dir: 'spec',
     spec_files: [
         './tests/**/*.spec.ts',
     ],
-    stopSpecOnExpectationFailure: false,
+    stopSpecOnExpectationFailure: true,
 });
 
 // On complete callback function
