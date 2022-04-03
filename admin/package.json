@@ -21,10 +21,10 @@
     "exec": "./node_modules/.bin/ts-node -r tsconfig-paths/register ./src"
   },
   "_moduleAliases": {
-    "@posts": " dist/posts",
-    "@shared": "dist/shared",
-    "@server": "dist/Server",
-    "@mocks": "spec/mocks"
+    "@posts": " ./dist/posts",
+    "@shared": "./dist/shared",
+    "@mocks": "./spec/mocks",
+    "@server": "./dist/Server"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",

@@ -1,8 +1,8 @@
-import { mkdtemp, rm } from 'fs/promises';
+import { mkdtemp, rm, readdir} from 'fs/promises';
 import { existsSync } from 'fs';
 
-import { getAllPosts, writeNewPost } from '../../src/posts/postsDao';
-import { newPost } from '../mocks';
+import { getAllPosts, writeNewPost, writeExistingPost } from '@posts/postsDao';
+import { newPost, updatedPostBasic, updatedPostTitle } from '../mocks';
 
 
 describe('PostDao', () => {
@@ -24,13 +24,24 @@ describe('PostDao', () => {
       await rm(tmpFileDir, { recursive: true, force: true });
     })
 
-    it('for a new post, it creates a file', async function() {
+    it('for a new post, it creates a file', async () => {
       await writeNewPost(newPost, tmpFileDir);
       const file = `${tmpFileDir}/${newPost.slug}.json`;
       const fileExists = existsSync(file);
       expect(fileExists).toBeTrue();
     });
 
+    it('for an existing post, it updates the contents', async () => {
+      await writeExistingPost(updatedPostBasic, tmpFileDir);
+      const fileEntries = await readdir(tmpFileDir);
+      expect(fileEntries.length).toEqual(1);
+    });
+
+    it('replaces the file if an updated post gets a new title', async () => {
+      await writeExistingPost(updatedPostTitle, tmpFileDir);
+      const fileEntries = await readdir(tmpFileDir);
+      expect(fileEntries.length).toEqual(1);
+    })
   });
 
 });
