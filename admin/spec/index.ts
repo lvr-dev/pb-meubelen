@@ -5,13 +5,12 @@ import commandLineArgs from 'command-line-args';
 import logger from '@shared/Logger';
 
 
-
 // Setup command line options
 const options = commandLineArgs([
     {
         name: 'testFile',
         alias: 'f',
-        type: String,
+        type: String
     },
 ]);
 
@@ -27,6 +26,7 @@ jasmine.loadConfig({
         './tests/**/*.spec.ts',
     ],
     stopSpecOnExpectationFailure: true,
+
 });
 
 // On complete callback function
@@ -39,13 +39,14 @@ jasmine.onComplete((passed: boolean) => {
     jasmine.exitCodeCompletion(passed);
 });
 
+
 // Run all or a single unit-test
 if (options.testFile) {
     const testFile = options.testFile as string;
     find.file(testFile + '.spec.ts', './spec', (files: string[]) => {
         if (files.length === 1) {
             jasmine.specFiles = [files[0]];
-            jasmine.execute();
+            jasmine.execute()
         } else {
             logger.err('Test file not found!');
         }

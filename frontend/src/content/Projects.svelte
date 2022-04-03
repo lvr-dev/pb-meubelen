@@ -1,6 +1,7 @@
 <script>
 import { onMount } from "svelte";
 import ProjectModal from "../ui/ProjectModal.svelte";
+import Badge from "../ui/Badge.svelte";
 import { toggleModalValue } from "../stores/ui-store";
 import { filterBadges, getTags } from "../utils";
 
@@ -27,6 +28,7 @@ import { filterBadges, getTags } from "../utils";
     }
 
     function toggleModal(project) {
+        console.log('togglemodal');
         showModal = !showModal;
         toggleModalValue.set(showModal);
         selectedProject = project;
@@ -132,25 +134,7 @@ import { filterBadges, getTags } from "../utils";
     </div>
     <div class="content-flex-wrapper">
         {#each allProjects as project}
-        <div    
-            class="badge" 
-            data-tag="{project.tags}"
-            class:outfiltered="{!project.selected}"
-        >
-            <div class="badge-image">
-                <img 
-                    src="{project.badgeImage.src}" 
-                    alt="{project.badgeImage.alt}"
-                    class="main-image"
-                />
-            </div>
-            <div 
-                class="badge-content"
-                on:click={() => toggleModal(project)}
-            >
-                {project.text}
-            </div>  
-        </div>
+        <Badge item={project} on:click={() => toggleModal(project)}/>
         {/each}
     </div>
 </div>
@@ -175,36 +159,6 @@ import { filterBadges, getTags } from "../utils";
     .badge-active {
         color: #FFC300;
     }
-    .badge {
-        width: 20vw;
-        background-color: rgb(31, 31, 31);
-        margin: 1rem;
-        border: solid 1px rgb(70,70,70);
-        border-bottom: solid 1px #FF5733 ;
-    }
-    .badge-image {
-        width: 100%;
-    }
-    .badge-content {
-        overflow: hidden;
-        -webkit-line-clamp: 5;
-        line-clamp: 5;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        padding: 1rem 0.3rem;
-        cursor: pointer;
-        max-height: 96px;
-    }
-    .outfiltered {
-        display: none;
-    }
 
-    @media only screen and (max-width: 600px) {
-        .badge {
-            width: 80vw;
-            margin: 1rem auto;
-        }
-    }
 
 </style>
