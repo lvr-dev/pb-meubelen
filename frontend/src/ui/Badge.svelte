@@ -29,7 +29,7 @@
 </div>
 <style>
     .badge {
-        width: 20vw;
+        width: 100%;
         background-color: rgb(31, 31, 31);
         margin: 1rem;
         border: solid 1px rgb(70,70,70);
@@ -41,6 +41,9 @@
     .badge-image {
         width: 100%;
     }
+    .main-image {
+        width: 100%;
+    }
     .badge-content {
         overflow: hidden;
         -webkit-line-clamp: 5;
@@ -48,9 +51,10 @@
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         display: -webkit-box;
-        padding: 1rem 0.3rem;
+        padding: 1rem;
         cursor: pointer;
         max-height: 96px;
+        color: #fff;
     }
     .outfiltered {
         display: none;
