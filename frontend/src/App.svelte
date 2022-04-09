@@ -14,7 +14,7 @@
 <div class="pb-grid-container">
 	<div class="pb-header-fill"></div>
 	<div class="pb-header"><Header /></div>
-	<div class="pb-sidebar"><Slider on:menuOption={selectComponent}/></div>
+	<div class="pb-sidebar"></div>
 	<main class="pb-main">
 		<section class="pb-content">
 			{#if selectedMenuOption === 'projecten'}
@@ -48,19 +48,32 @@
 }
 
 .pb-main {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 	grid-area: main;
 }
 
 
-
  @media only screen and (max-width: 600px) {
 	.pb-grid-container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header"
 			"main";
+		grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+	}
 
+	.pb-header, .pb-main {
+		grid-column: auto;
+		grid-row: auto;
+	}
+
+	.pb-header-fill {
+		display: none;
+	}
+
+	.pb-sidebar {
+		display: none;
 	}
  }
 

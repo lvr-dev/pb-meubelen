@@ -34,7 +34,6 @@
         display: flex;
         flex-direction: row;
         border: solid 1px #FFC300;
-       
     }
 
     .pb-menu-icon {
@@ -49,7 +48,8 @@
         .pb-header-toolbar {
             border: none;
             padding: 0;
-            width: 85%;
+            justify-content: space-between;
+            
         }
         .pb-menu-icon {
             width: 20%;
