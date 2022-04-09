@@ -34,6 +34,7 @@
         margin: 1rem;
         border: solid 1px rgb(70,70,70);
         border-bottom: solid 1px #FF5733 ;
+        overflow: hidden;
     }
     .badge-clickable {
         cursor: pointer
@@ -45,7 +46,6 @@
         width: 100%;
     }
     .badge-content {
-        overflow: hidden;
         -webkit-line-clamp: 5;
         line-clamp: 5;
         -webkit-box-orient: vertical;
