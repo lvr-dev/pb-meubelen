@@ -1,5 +1,4 @@
 <div class="content-wrapper">
-    <h2 class="page-title mobile">Over Pippi</h2>
     <div class="card">
         <div class="card-image">
             <img 
@@ -32,12 +31,11 @@
 .card-content {
     margin: 1rem;
 }
-@media only screen and (min-width: 601px) {
 
-}
 @media only screen and (max-width: 825px) {
     .card {
         width: 90vw;
+        margin: 0 auto;
     }
 }
 

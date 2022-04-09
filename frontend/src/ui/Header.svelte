@@ -43,7 +43,7 @@
         padding: 0 12px; 
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 825px) {
 
         .pb-header-toolbar {
             border: none;

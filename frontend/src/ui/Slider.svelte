@@ -83,7 +83,7 @@ li.menu-link.selected {
     cursor: crosshair;
 }
 
-@media only screen and (max-width: 600) {
+@media only screen and (max-width: 825) {
     .pb-slider {
         display: none;
     }
@@ -119,7 +119,7 @@ li.menu-link.selected {
     }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 826px) {
     .pb-slider {
         display: block;
     }
