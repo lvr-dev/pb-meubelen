@@ -27,17 +27,14 @@
 </header>
 <style>
     .pb-fw-header {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        position: absolute
+        height: 100%;
+        padding: 8px 8px 8px 0;
     }
     .pb-header-toolbar {
         display: flex;
         flex-direction: row;
         border: solid 1px #FFC300;
-        width: 70%;
-        margin: 1rem auto;
+       
     }
 
     .pb-menu-icon {
@@ -47,10 +44,8 @@
         padding: 0 12px; 
     }
 
-    @media only screen and (max-width: 824px) {
-        .pb-fw-header {
-            height: 86px;
-        }
+    @media only screen and (max-width: 600px) {
+
         .pb-header-toolbar {
             border: none;
             padding: 0;

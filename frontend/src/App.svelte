@@ -11,30 +11,67 @@
 		selectedMenuOption = event.detail.menuOption;
 	}
 </script>
-
-<Header />
-<main class="pb-main">
-<Slider on:menuOption={selectComponent}/>
-<section class="pb-content">
-	{#if selectedMenuOption === 'projecten'}
-   		<Projects />
-	{:else if selectedMenuOption === 'stages'}
-   		<Internships />
-	{:else}
-   		<About />
-	{/if}
-</section>
-</main>
+<div class="pb-grid-container">
+	<div class="pb-header-fill"></div>
+	<div class="pb-header"><Header /></div>
+	<div class="pb-sidebar"><Slider on:menuOption={selectComponent}/></div>
+	<main class="pb-main">
+		<section class="pb-content">
+			{#if selectedMenuOption === 'projecten'}
+				<Projects />
+			{:else if selectedMenuOption === 'stages'}
+				<Internships />
+			{:else}
+				<About />
+			{/if}
+		</section>
+	</main>
+</div>
 <style>
+
+.pb-grid-container {
+	display: grid;
+	height: 100vh;
+	width: 100%;
+}
+
+.pb-header {
+	grid-area: header;
+}
+
+.pb-header-fill {
+	grid-area: header-fill;
+}
+
+.pb-sidebar {
+	grid-area: sidebar;
+}
+
 .pb-main {
-    height: 100%;
     display: flex;
     flex-direction: row;
-	position: absolute;
-	top: 86px;
-	right: 0;
-	left: 0;
-	bottom: 0;
+	grid-area: main;
 }
+
+
+
+ @media only screen and (max-width: 600px) {
+	.pb-grid-container {
+		grid-template-areas: 
+			"header"
+			"main";
+
+	}
+ }
+
+ @media only screen and (min-width: 601px) {
+	.pb-grid-container {
+		grid-template-areas: 
+		"header-fill header"
+		"sidebar main";
+		grid-template-rows: 116px 5fr;
+		grid-template-columns: 190px 5fr;
+	}
+ }
 
 </style>

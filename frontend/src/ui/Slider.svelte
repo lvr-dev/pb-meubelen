@@ -74,6 +74,7 @@ li.menu-link {
     color: #ff7f00;
     cursor: pointer;
     font-size: 1.3rem;
+    text-align: end;
 }
 
 li.menu-link.selected {
@@ -82,7 +83,7 @@ li.menu-link.selected {
     cursor: crosshair;
 }
 
-@media only screen and (max-width: 824px) {
+@media only screen and (max-width: 600) {
     .pb-slider {
         display: none;
     }
@@ -118,14 +119,11 @@ li.menu-link.selected {
     }
 }
 
-@media only screen and (min-width: 825px) {
+@media only screen and (min-width: 601px) {
     .pb-slider {
         display: block;
-        width: 15%;
     }
     .pb-slider-container {
-        height: 100%;
-        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
