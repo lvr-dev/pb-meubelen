@@ -1,5 +1,5 @@
 <script>
-import { onMount } from "svelte";
+import { onMount, onDestroy } from "svelte";
 import ProjectModal from "../ui/ProjectModal.svelte";
 import Badge from "../ui/Badge.svelte";
 import { toggleModalValue } from "../stores/ui-store";
@@ -27,16 +27,20 @@ import { filterBadges, getTags } from "../utils";
         }
     }
 
-    function toggleModal(project) {
-        console.log('togglemodal');
-        showModal = !showModal;
-        toggleModalValue.set(showModal);
-        selectedProject = project;
+    function toggleModal(event) {
+        if (event.detail && event.detail.item) {
+            const project = event.detail.item;
+            showModal = !showModal;
+            toggleModalValue.set(showModal);
+            selectedProject = project;
+        }
     }
 
     const unsubscribe = toggleModalValue.subscribe(value => {
 	    showModal = value;
     });
+
+    onDestroy(unsubscribe);
 
     const currentProjects = [
         {
@@ -134,7 +138,9 @@ import { filterBadges, getTags } from "../utils";
     </div>
     <div class="content-flex-wrapper">
         {#each allProjects as project}
-        <Badge item={project} on:click={() => toggleModal(project)}/>
+            <div class="badge-container">
+                <Badge item={project} on:badgeClick={toggleModal}/>
+            </div>
         {/each}
     </div>
 </div>
@@ -160,5 +166,10 @@ import { filterBadges, getTags } from "../utils";
         color: #FFC300;
     }
 
+    @media only screen and (min-width: 601px) {
+        .badge-container {
+            width: 30%;
+        }
+    }
 
 </style>
