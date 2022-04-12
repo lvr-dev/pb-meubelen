@@ -1,7 +1,7 @@
 <script>
      import Icon from 'svelte-awesome';
      import { times } from 'svelte-awesome/icons';
-     import { toggleModalValue } from '../stores/ui-store';
+     import { showMenu } from '../stores/ui-store';
     
      export let id;
      export let tags;
@@ -12,7 +12,7 @@
      export let additionalImages;
 
      function closeModal() {
-        toggleModalValue.set(false);
+        showMenu.set(false);
      }
 
 </script>

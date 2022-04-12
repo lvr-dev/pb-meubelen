@@ -2,13 +2,13 @@
 import { onMount, onDestroy } from "svelte";
 import ProjectModal from "../ui/ProjectModal.svelte";
 import Badge from "../ui/Badge.svelte";
-import { toggleModalValue } from "../stores/ui-store";
+import { showModal } from "../stores/ui-store";
 import { filterBadges, getTags } from "../utils";
 
     let selectedBadge = 'all';
     let badgeTags = [];
     let allProjects = [];
-    let showModal = false;
+    let modalIsShown = false;
     let selectedProject;
    
 
@@ -30,14 +30,14 @@ import { filterBadges, getTags } from "../utils";
     function toggleModal(event) {
         if (event.detail && event.detail.item) {
             const project = event.detail.item;
-            showModal = !showModal;
-            toggleModalValue.set(showModal);
+            modalIsShown = !modalIsShown;
+            showModal.set(modalIsShown);
             selectedProject = project;
         }
     }
 
-    const unsubscribe = toggleModalValue.subscribe(value => {
-	    showModal = value;
+    const unsubscribe = showModal.subscribe(value => {
+	    modalIsShown = value;
     });
 
     onDestroy(unsubscribe);
@@ -118,7 +118,7 @@ import { filterBadges, getTags } from "../utils";
     ]
 
 </script>
-{#if showModal}
+{#if modalIsShown}
     <ProjectModal {...selectedProject} />
 {/if} 
 

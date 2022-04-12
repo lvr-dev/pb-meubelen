@@ -8,3 +8,4 @@ async function getArticlesByType(contentType) {
 }
  
 
+export const selectedComponent = writable('about');

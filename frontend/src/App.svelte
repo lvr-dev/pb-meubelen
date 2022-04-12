@@ -1,32 +1,17 @@
 <script>
-	import Header from './ui/Header.svelte'
-    import Slider from './ui/Slider.svelte'
-	import Projects from './content/Projects.svelte'
-	import Internships from './content/Internships.svelte'
-	import About from './content/About.svelte'
+	import Header from './ui/Header.svelte';
+    import Sidebar from './navigation/Sidebar.svelte';
+	import Main from './templates/Main.svelte';
+	
 
-	let selectedMenuOption;
-
-	function selectComponent(event) {
-		selectedMenuOption = event.detail.menuOption;
-	}
 </script>
 <div class="pb-grid-container">
 	<div class="pb-header-fill"></div>
 	<div class="pb-header"><Header /></div>
-	<div class="pb-sidebar"><Slider /></div>
-	<main class="pb-main">
-		<section class="pb-content">
-			{#if selectedMenuOption === 'projecten'}
-				<Projects />
-			{:else if selectedMenuOption === 'stages'}
-				<Internships />
-			{:else}
-				<About />
-			{/if}
-		</section>
-	</main>
+	<div class="pb-sidebar"><Sidebar /></div>
+	<main class="pb-main"><Main /></main>
 </div>
+
 <style>
 
 .pb-grid-container {
