@@ -65,8 +65,8 @@
             justify-content: center;
             padding-top: 12px;
             position: fixed;
-            top: 0;
-            right: 0;
+            top: 12px;
+            right: 12px;
         }
         .pb-icon {
             cursor: pointer;

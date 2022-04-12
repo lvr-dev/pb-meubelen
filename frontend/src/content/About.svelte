@@ -18,18 +18,17 @@
 
 <style>
 .card {
-	background-color: rgb(31, 31, 31);
+	background-color: rgb(22,13,8);
 	padding-bottom: 0.2rem;
 	display: flex;
 	flex-direction: row;
-    border: solid 1px rgb(70,70,70);
 }
 .card-image {
     float: left;
     min-width: 240px;
 }
 .card-content {
-    margin: 1rem;
+    padding: 1rem;
 }
 
 @media only screen and (max-width: 825px) {
@@ -37,12 +36,24 @@
         width: 90vw;
         margin: 0 auto;
     }
+
+    .card-content {
+        border-top: solid 1px rgb(70,70,70);
+        border-right: solid 1px rgb(70,70,70);
+        border-bottom: solid 1px rgb(70,70,70);
+    }
 }
 
 @media only screen and (max-width: 450px) {
     .card {
         flex-direction: column;
         border: none;
+    }
+
+    .card-content {
+        border-left: solid 1px rgb(70,70,70);
+        border-right: solid 1px rgb(70,70,70);
+        border-bottom: solid 1px rgb(70,70,70);
     }
 }
 

@@ -9,8 +9,10 @@
 <div class="pb-grid-container">
 	<div class="pb-header-fill"></div>
 	<div class="pb-header"><Header /></div>
+	<div class="pb-header-fill"></div>
 	<div class="pb-sidebar"><Sidebar /></div>
 	<main class="pb-main"><Main /></main>
+	<div class="pb-fill"></div>
 </div>
 <MobileMenu />
 <style>
@@ -28,6 +30,11 @@
 .pb-header-fill {
 	grid-area: header-fill;
 }
+
+.pb-fill {
+	grid-area: pb-fill;
+}
+
 
 .pb-sidebar {
 	grid-area: sidebar;
@@ -52,11 +59,8 @@
 		grid-row: auto;
 	}
 
-	.pb-header-fill {
-		display: none;
-	}
 
-	.pb-sidebar {
+	.pb-fill, .pb-sidebar, .pb-header-fill {
 		display: none;
 	}
  }
@@ -66,8 +70,8 @@
 		grid-template-areas: 
 		"header-fill header"
 		"sidebar main";
-		grid-template-rows: 116px 5fr;
-		grid-template-columns: 190px 5fr;
+	    grid-template-columns: 1fr 5fr 1fr;
+		grid-template-rows: 128px auto;
 	}
  }
 

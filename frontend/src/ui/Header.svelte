@@ -28,7 +28,7 @@
 <style>
     .pb-fw-header {
         height: 100%;
-        padding: 8px 8px 8px 0;
+        padding: 8px 0;
     }
     .pb-header-toolbar {
         display: flex;

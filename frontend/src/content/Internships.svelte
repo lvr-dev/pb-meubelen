@@ -45,6 +45,7 @@
     .block {
         margin-bottom: 2rem;
     }
+    
     .text-wrapper {
         margin-top: 0.5rem;
     }
@@ -53,4 +54,12 @@
         flex-direction: row;
 
     }
+
+      @media only screen and (max-width: 825px) {
+          .content-wrapper {
+              padding: 2rem;
+          }
+      }
+
+
 </style>

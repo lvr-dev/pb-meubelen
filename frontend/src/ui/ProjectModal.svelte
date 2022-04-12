@@ -1,7 +1,7 @@
 <script>
      import Icon from 'svelte-awesome';
      import { times } from 'svelte-awesome/icons';
-     import { showMenu } from '../stores/ui-store';
+     import { showModal } from '../stores/ui-store';
     
      export let id;
      export let tags;
@@ -12,7 +12,7 @@
      export let additionalImages;
 
      function closeModal() {
-        showMenu.set(false);
+        showModal.set(false);
      }
 
 </script>
@@ -63,16 +63,16 @@
        bottom: 0;
        right: 0;
        left: 0;
-       background-color: rgba(40,40,40);
+       background-color: rgb(26,17,16, 0.9);
    }
    .pb-modal {
        z-index: 100;
        width: 68vw;
-       height: 600px;
-       margin: 4rem auto;
-       background-color: rgb(40,40,40);
+       height: 80vh;
+       margin: 3rem auto;
+       background-color: rgb(26,17,16);
        opacity: 1;
-       border: solid 1px #ff7f00;
+       border: solid 1px rgb(255, 195, 0);
        padding: 1rem;
        overflow: scroll;
    }
@@ -92,7 +92,7 @@
        width: 40%;
    }
    .pb-hr {
-        border-bottom: solid 1px #e41586;
+        border-bottom: solid 1px rgb(255, 195, 0);
         margin: 2rem 0;
    }
    .pb-image-container {
