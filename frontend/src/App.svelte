@@ -1,9 +1,10 @@
 <script>
 	import Header from './ui/Header.svelte';
     import Sidebar from './navigation/Sidebar.svelte';
+	import MobileMenu from './navigation/MobileMenu.svelte';
 	import Main from './templates/Main.svelte';
-	
 
+	
 </script>
 <div class="pb-grid-container">
 	<div class="pb-header-fill"></div>
@@ -11,7 +12,7 @@
 	<div class="pb-sidebar"><Sidebar /></div>
 	<main class="pb-main"><Main /></main>
 </div>
-
+<MobileMenu />
 <style>
 
 .pb-grid-container {

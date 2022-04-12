@@ -3,7 +3,7 @@
      import { bars } from 'svelte-awesome/icons';
      import { showMenu } from '../stores/ui-store.js';
 
-     function toggleSideMenu() {
+     function toggleMenu() {
         showMenu.set(true);
      }
 
@@ -18,7 +18,7 @@
         <div class="pb-menu-icon">
             <div 
             class="pb-icon"
-            on:click={toggleSideMenu} 
+            on:click={toggleMenu} 
             >
                 <Icon scale="2" data={bars}/>
             </div>
@@ -44,7 +44,10 @@
     }
 
     @media only screen and (max-width: 825px) {
-
+        .pb-fw-header {
+            height: 100%;
+            padding: 1rem;
+        }
         .pb-header-toolbar {
             border: none;
             padding: 0;

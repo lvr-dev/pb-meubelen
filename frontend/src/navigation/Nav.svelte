@@ -1,10 +1,12 @@
     
 <script>
     import { selectedComponent } from '../stores/content-store';
+    import { showMenu } from '../stores/ui-store';
     let selectedMenuOption = 'about';
     function selectMenu(event) {
         selectedMenuOption = event.target.id;
         selectedComponent.set(selectedMenuOption);
+        showMenu.set(false);
     }
 </script>
 <ul class="pb-slider-container">
@@ -34,8 +36,8 @@
     </li>       
 </ul>
 <style>
+
 li.menu-link {
-    width: 100%;
     text-decoration: none;
     padding: 1rem;
     color: #ff7f00;
@@ -48,5 +50,18 @@ li.menu-link.selected {
     font-weight: bold;
     color: #FFC300;
     cursor: crosshair;
+}
+
+@media only screen and (min-width: 826px) {
+    li.menu-link {
+        text-align: end;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    li.menu-link {
+        text-align: center;
+    }
 }
 </style>

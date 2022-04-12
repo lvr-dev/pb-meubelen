@@ -136,7 +136,7 @@ import { filterBadges, getTags } from "../utils";
         </span>
         {/each}
     </div>
-    <div class="content-flex-wrapper">
+    <div class="content-grid">
         {#each allProjects as project}
             <div class="badge-container">
                 <Badge item={project} on:badgeClick={toggleModal}/>
@@ -145,6 +145,10 @@ import { filterBadges, getTags } from "../utils";
     </div>
 </div>
 <style>
+    .content-grid {
+        display: grid;
+
+    }
     .tag-filter {
         display: flex;
         flex-wrap: wrap;
@@ -166,9 +170,11 @@ import { filterBadges, getTags } from "../utils";
         color: #FFC300;
     }
 
-    @media only screen and (min-width: 601px) {
-        .badge-container {
-            width: 30%;
+    @media only screen and (min-width: 826px) {
+        .content-grid {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 48px;
+            row-gap: 48px;
         }
     }
 

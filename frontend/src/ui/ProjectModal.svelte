@@ -80,6 +80,7 @@
        display: flex;
        align-items: baseline;
        margin-bottom: 2rem;
+       justify-content: space-between;
    }
    .pb-modal-content {
        display: flex;
