@@ -1,6 +1,6 @@
 <script>
 	import Header from './ui/Header.svelte';
-    import Sidebar from './navigation/Sidebar.svelte';
+	import Sidebar from './navigation/Sidebar.svelte';
 	import MobileMenu from './navigation/MobileMenu.svelte';
 	import Main from './templates/Main.svelte';
 
